@@ -29,7 +29,7 @@ namespace Crypto {
     }
   }
 
-  cn_context::~cn_context() {
+  cn_context::~cn_context() noexcept(false) {
     if (!VirtualFree(data, 0, MEM_RELEASE)) {
       throw bad_alloc();
     }
@@ -49,7 +49,7 @@ namespace Crypto {
     mlock(data, MAP_SIZE);
   }
 
-  cn_context::~cn_context() {
+  cn_context::~cn_context() noexcept(false) {
     if (munmap(data, MAP_SIZE) != 0) {
       throw bad_alloc();
     }

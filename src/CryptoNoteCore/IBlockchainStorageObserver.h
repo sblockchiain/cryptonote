@@ -7,7 +7,7 @@
 namespace CryptoNote {
   class IBlockchainStorageObserver {
   public:
-    virtual ~IBlockchainStorageObserver() {
+    virtual ~IBlockchainStorageObserver() noexcept(false) {
     }
 
     virtual void blockchainUpdated() = 0;

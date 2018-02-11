@@ -7,7 +7,7 @@
 namespace CryptoNote {
 class ITxPoolObserver {
 public:
-  virtual ~ITxPoolObserver() {
+  virtual ~ITxPoolObserver() noexcept(false) {
   }
 
   virtual void txDeletedFromPool() = 0;

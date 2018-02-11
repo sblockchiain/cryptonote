@@ -40,7 +40,7 @@ struct tx_verification_context;
 
 class ICore {
 public:
-  virtual ~ICore() {}
+  virtual ~ICore() noexcept(false) {}
 
   virtual bool addObserver(ICoreObserver* observer) = 0;
   virtual bool removeObserver(ICoreObserver* observer) = 0;

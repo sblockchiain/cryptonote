@@ -28,7 +28,7 @@ namespace CryptoNote {
 
   class ITransactionValidator {
   public:
-    virtual ~ITransactionValidator() {}
+    virtual ~ITransactionValidator() noexcept(false) {}
     
     virtual bool checkTransactionInputs(const CryptoNote::Transaction& tx, BlockInfo& maxUsedBlock) = 0;
     virtual bool checkTransactionInputs(const CryptoNote::Transaction& tx, BlockInfo& maxUsedBlock, BlockInfo& lastFailed) = 0;
